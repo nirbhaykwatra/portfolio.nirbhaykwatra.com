@@ -1,0 +1,13 @@
+{
+    "categories": {
+        "movies":{
+            "thumbnail": true
+        },
+        "games":{
+            "thumbnail": true
+        },
+        "reviews":{
+            "thumbnail": false
+        }
+    }
+}

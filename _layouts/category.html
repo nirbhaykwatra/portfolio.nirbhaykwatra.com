@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  {{ content }}
+
+  {%- if site.posts.size > 0 -%}
+    <h2 class="post-list-heading">{{ page.list_heading | default: "Posts" }}</h2>
+    <div class="post-list">
+      {%- for category in site.categories -%}
+        {%- for category_name in category[0] -%}
+          {%- if category_name == page.category_lookup -%}
+            {%- for post in category[1] -%}
+              <div class="post-list-item">
+                <a class="post-item-anchor" href="{{ post.url | relative_url }}">
+                  {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+                  <div class="post-item-image">
+                    <img src="../static/thumbnails/{{ post.thumbnail | default}}.png">
+                  </div>
+                  <div class="post-item-content">
+                    <span class="post-meta">{{ post.date | date: date_format }}</span>
+                    <h3 class="post-item-heading">
+                      <!--<a class="post-link" href="{{ post.url | relative_url }}">-->
+                        {{ post.title | escape }}
+                      <!--</a>-->
+                    </h3>
+                    {%- if site.show_excerpts -%}
+                    <div class="post-excerpt">
+                      {{ post.excerpt }}
+                    </div>
+                    {%- endif -%}
+                  </div>
+                </a>
+              </div>
+            {%- endfor -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+</div>

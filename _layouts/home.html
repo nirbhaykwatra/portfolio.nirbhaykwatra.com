@@ -1,0 +1,63 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  {%- if site.categories.size > 0 -%}
+    <h2 class="categories-list-heading">{{ "Categories" | default: "posts" }}</h2>
+    <div class="categories-list">
+      {%- for category in site.data.viewable_categories.categories -%}
+      <div class="categories-list-item">
+        <a class="categories-item-anchor" href="{{ category[0] | relative_url }}/index.html">
+          {%- if category[1].thumbnail == true -%}
+          <div class="categories-item-image">
+            <img src="../static/thumbnails/categories/{{ category[0] | default}}.png">
+          </div>
+          {%- endif -%}
+          <div class="categories-item-heading">
+            <h3 class="categories-heading">
+              {{ category[0] | escape }}
+            </h3>
+          </div>
+        </a>
+      </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+  {%- if site.posts.size > 0 -%}
+    <h2 class="post-list-heading">{{ page.list_title | default: "posts" }}</h2>
+    <div class="post-list">
+      {%- for post in site.posts -%}
+      <div class="post-list-item">
+        <a class="post-item-anchor" href="{{ post.url | relative_url }}">
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          <div class="post-item-image">
+            <img src="../static/thumbnails/{{ post.thumbnail | default}}.png">
+          </div>
+          <div class="post-item-content">
+            <span class="post-meta">{{ post.date | date: date_format }}</span>
+            <h3 class="post-item-heading">
+              <!--<a class="post-link" href="{{ post.url | relative_url }}">-->
+                {{ post.title | escape }}
+              <!--</a>-->
+            </h3>
+            {%- if site.show_excerpts -%}
+            <div class="post-excerpt">
+              {{ post.excerpt }}
+            </div>
+            {%- endif -%}
+          </div>
+        </a>
+      </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+</div>
