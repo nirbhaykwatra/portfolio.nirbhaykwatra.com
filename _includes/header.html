@@ -5,8 +5,8 @@
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     <div class="site-title-container">
       <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
-      {%- if site.author -%}
-      <h3 class="site-subtitle" rel="author">by {{ site.author }}</h3>
+      {%- if site.byline -%}
+      <h3 class="site-subtitle" rel="byline">{{ site.byline }}</h3>
       {%- endif -%}
     </div>
 

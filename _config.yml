@@ -18,14 +18,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: CTRL+ALT+ACTION!
+title: Nirbhay Kwatra
 email: contact@nirbhaykwatra.com
-author: Nirbhay Kwatra
+byline: Programmer and Game Developer
 show_excerpts: true
 description: >- # this means to ignore newlines until "baseurl:"
-  A blog filled with ideas, game and film analyses, game dev diaries and more. Visit nirbhaykwatra.com to see what I have done in my life.
+
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "blog.nirbhaykwatra.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "portfolio.nirbhaykwatra.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: nirbhaykwatra
 linkedin_username: nirbhaykwatra
 youtube_username: nirbhaykwatra

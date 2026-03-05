@@ -36,17 +36,18 @@
 .site-title-container {
   display: flex;
   flex-direction: column;
+  justify-items: center;
+  align-items: left;
 }
 
 .site-title {
   @include relative-font-size(4);
-  font-weight: 400;
+  font-weight: 350;
   font-family: "Bitcount";
   letter-spacing: 4px;
-  line-height: $base-line-height * $base-font-size * 2;
+  line-height: $base-line-height * $base-font-size * 2.5;
   margin-bottom: 0;
   float: left;
-  overflow: hidden;
 
   /* Fallback: Set a background color. */
   background-color: #ffffff;
