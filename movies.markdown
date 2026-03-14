@@ -1,7 +1,7 @@
 ---
 layout: category
-title: Movies
-category_lookup: movies
-list_heading: Posts about Movies
-permalink: /movies/
+title: Misc
+category_lookup: misc
+list_heading: Miscellanious Projects
+permalink: /misc-projects/
 ---
